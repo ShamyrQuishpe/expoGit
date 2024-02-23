@@ -19,10 +19,28 @@ public class Ingreso extends JFrame{
         sumaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //obtenerDatos();
-                //suma(numero1,numero2);
+                obtenerDatos();
+                suma(numero1,numero2);
             }
         });
+    }
+    public void obtenerDatos(){
+        String num1 = num1Field.getText();
+        String num2 = num2Field.getText();
+
+        numero1 = Double.parseDouble(num1);
+        numero2 = Double.parseDouble(num2);
+
+    }
+
+    public void seteo(){
+        num1Field.setText("");
+        num2Field.setText("");
+    }
+
+    public void suma(double num1, double num2){
+        JOptionPane.showMessageDialog(null, "Su resultado es: "+(num1+num2));
+        seteo();
     }
 
 }
