@@ -23,6 +23,17 @@ public class Ingreso extends JFrame{
                 suma(numero1,numero2);
             }
         });
+        multiplicacionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    obtenerDatos();
+                    multiplicacion(numero1,numero2);
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, "Error");
+                }
+            }
+        });
     }
     public void obtenerDatos(){
         String num1 = num1Field.getText();
@@ -40,6 +51,10 @@ public class Ingreso extends JFrame{
 
     public void suma(double num1, double num2){
         JOptionPane.showMessageDialog(null, "Su resultado es: "+(num1+num2));
+        seteo();
+    }
+    public void multiplicacion(double num1, double num2){
+        JOptionPane.showMessageDialog(null, "Su resultado es: "+(num1*num2));
         seteo();
     }
 
