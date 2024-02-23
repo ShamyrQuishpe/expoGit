@@ -23,6 +23,23 @@ public class Ingreso extends JFrame{
                 suma(numero1,numero2);
             }
         });
+        divisionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String num2 = num2Field.getText();
+
+                if (num2 == "0"){
+                    JOptionPane.showMessageDialog(null, "Error no se permite dividir para 0");
+                    seteo();
+                }
+                else{
+                    obtenerDatos();
+                    division(numero1,numero2);
+                }
+
+
+            }
+        });
     }
     public void obtenerDatos(){
         String num1 = num1Field.getText();
@@ -42,6 +59,19 @@ public class Ingreso extends JFrame{
         JOptionPane.showMessageDialog(null, "Su resultado es: "+(num1+num2));
         seteo();
     }
-
+    public void division(double num1, double num2){
+        try {
+            if (num2 == 0){
+                JOptionPane.showMessageDialog(null,"No existe division para cero");
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Su resultado es: " + (num1 / num2));
+                seteo();
+            }
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, "SYNTAX ERROR ");
+        }
+    }
 }
 
